@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebecca Yarros y sus Obras</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Rebecca Yarros</h1>
+    <p>Reina de los dragones, la fantasía y las emociones intensas</p>
+</header>
+
+<section class="hero">
+    <div class="dragon-overlay"></div>
+</section>
+
+<section class="galeria">
+
+    <!-- AUTORA -->
+    <div class="card">
+        <img src="imagenes/rebecca.jpg" onclick="mostrarInfo('rebecca')">
+        <h3>Rebecca Yarros</h3>
+    </div>
+
+    <!-- LIBROS -->
+    <div class="card">
+        <img src="imagenes/fourthwing.jpg" onclick="mostrarInfo('fourthwing')">
+        <h3>Fourth Wing</h3>
+    </div>
+
+    <div class="card">
+        <img src="imagenes/ironflame.jpg" onclick="mostrarInfo('ironflame')">
+        <h3>Iron Flame</h3>
+    </div>
+
+    <div class="card">
+        <img src="imagenes/onyxstorm.jpg" onclick="mostrarInfo('onyxstorm')">
+        <h3>Onyx Storm</h3>
+    </div>
+
+</section>
+
+<!-- VENTANA EMERGENTE -->
+
+<div id="popup" class="popup">
+    <div class="contenido">
+        <span class="cerrar" onclick="cerrarPopup()">&times;</span>
+        <h2 id="titulo"></h2>
+        <p id="texto"></p>
+    </div>
+</div>
+
+<script>
+
+function mostrarInfo(tipo){
+
+const titulo=document.getElementById("titulo");
+const texto=document.getElementById("texto");
+const popup=document.getElementById("popup");
+
+if(tipo==="rebecca"){
+titulo.innerHTML="Biografía de Rebecca Yarros";
+
+texto.innerHTML=`
+Rebecca Yarros es una escritora estadounidense reconocida internacionalmente por sus novelas de fantasía, romance y ficción contemporánea.
+
+Nació en Estados Unidos y desde joven desarrolló una profunda pasión por la lectura y la escritura. A lo largo de su carrera ha publicado numerosas novelas que han alcanzado las listas de best sellers.
+
+Su fama mundial llegó con la saga The Empyrean, iniciada con Fourth Wing, una historia ambientada en un brutal colegio militar de jinetes de dragones.
+
+Sus obras destacan por:
+• Personajes complejos.
+• Relaciones emocionales intensas.
+• Grandes dosis de acción.
+• Dragones y criaturas fantásticas.
+• Intrigas políticas.
+• Mundos cuidadosamente construidos.
+
+Además de escribir, Rebecca Yarros participa activamente en obras benéficas relacionadas con familias militares y adopciones.
+
+Actualmente es considerada una de las autoras más influyentes del género romantasy, una combinación de fantasía épica y romance.
+`;
+}
+
+if(tipo==="fourthwing"){
+titulo.innerHTML="Fourth Wing";
+
+texto.innerHTML=`
+Violet Sorrengail esperaba dedicar su vida a los libros, pero es obligada por su madre a ingresar al Colegio de Guerra Basgiath para convertirse en jinete de dragones.
+
+En una academia donde la mayoría de los cadetes son más fuertes que ella y donde la muerte es una realidad cotidiana, Violet deberá sobrevivir, formar alianzas y descubrir secretos que podrían cambiar su mundo para siempre.
+
+La historia mezcla romance, acción, magia, política y espectaculares dragones.
+`;
+}
+
+if(tipo==="ironflame"){
+titulo.innerHTML="Iron Flame";
+
+texto.innerHTML=`
+Tras sobrevivir a los desafíos de Basgiath, Violet enfrenta una amenaza mucho mayor.
+
+Las mentiras que sostenían su mundo comienzan a derrumbarse mientras nuevas alianzas y enemigos aparecen en el horizonte.
+
+Iron Flame expande el universo de Fourth Wing con más dragones, conflictos militares, traiciones y revelaciones sorprendentes.
+`;
+}
+
+if(tipo==="onyxstorm"){
+titulo.innerHTML="Onyx Storm";
+
+texto.innerHTML=`
+La guerra se intensifica y los peligros alcanzan niveles sin precedentes.
+
+Violet y sus aliados deben enfrentar enemigos cada vez más poderosos mientras luchan por proteger todo aquello que aman.
+
+Onyx Storm continúa desarrollando la saga con batallas épicas, misterios y el vínculo entre humanos y dragones.
+`;
+}
+
+popup.style.display="flex";
+}
+
+function cerrarPopup(){
+document.getElementById("popup").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
